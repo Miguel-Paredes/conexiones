@@ -2,8 +2,8 @@ import java.sql.*;
 public class miprimerSelect {
     static final String DB_URL = "jdbc:mysql://localhost/poo";
     static final String USER = "root";
-    static final String PASS = "un_password_cualquiera";
-    static final String QUERY = "SELECT * FROM ESTUDIANES";
+    static final String PASS = "root_bas3";
+    static final String QUERY = "Select * From Estudiantes";
 
     public static void main(String[] args) {
         try (
@@ -15,8 +15,8 @@ public class miprimerSelect {
             System.out.println("nombre: "+rs.getString("nombre"));
             System.out.println("edad: "+rs.getInt("edad"));
             System.out.println("ciudad: "+rs.getString("ciudad"));
-            System.out.println("cedula: "+rs.getInt("cédula"));
-            System.out.println("password: "+rs.getInt("password"));
+            System.out.println("cedula: "+rs.getString("cédula"));
+            System.out.println("password: "+rs.getString("password"));
         }
         } catch (SQLException e) {
             throw new RuntimeException(e);
