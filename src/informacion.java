@@ -16,6 +16,8 @@ public class informacion {
     private JLabel contraseniar;
     private JButton query;
     private javax.swing.JPanel JPanel;
+    private JButton eliminarButton;
+    private JButton crearButton;
 
     public informacion() {
         query.addActionListener(new ActionListener() {
@@ -30,12 +32,33 @@ public class informacion {
                     nombrer.setText("nombre: "+rs.getString("nombre"));
                     edadr.setText("edad: "+rs.getInt("edad"));
                     ciudadr.setText("ciudad: "+rs.getString("ciudad"));
-                    cedular.setText("cedula: "+rs.getString("cédula"));
-                    contraseniar.setText("password: "+rs.getString("password"));
+                    cedular.setText("cedula: "+rs.getString("cedula"));
+                    //contraseniar.setText("contraseña: "+rs.getString("password"));
                 }
                 } catch (SQLException a) {
                     throw new RuntimeException(a);
                 }
+            }
+        });
+        eliminarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame= new JFrame ("Eliminar Datos");
+                frame.setContentPane(new eliminar().rootPanel);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+
+        crearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame= new JFrame ("Crear Datos");
+                frame.setContentPane(new crear().rootPanel);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
             }
         });
     }
@@ -46,6 +69,6 @@ public class informacion {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        frame.setSize(200,200);
+        frame.setSize(300,300);
     }
 }
