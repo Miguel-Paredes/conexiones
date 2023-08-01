@@ -23,11 +23,9 @@ public class crear {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int id=Integer.parseInt(idfile.getText());
-                String nombreS = nombrefile.getText();
-                int nombre = Integer.parseInt(nombreS);
+                String nombre = String.valueOf(nombrefile.getText());
                 int edad=Integer.parseInt(edadfile.getText());
-                String ciudadS = nombrefile.getText();
-                int ciudad = Integer.parseInt(ciudadS);
+                String ciudad = String.valueOf(ciudadfile.getText());
                 int cedula=Integer.parseInt(cedulafile.getText());
                 String query= "insert into Estudiantes values ("+id+",'"+nombre+"',"+edad+",'"+ciudad+"',"+cedula;
                 try(
